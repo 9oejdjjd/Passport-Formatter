@@ -2,8 +2,13 @@ import axios from 'axios';
 import { PassportData } from '../types/passportTypes';
 
 // OCR.space API key
-const apiKey = 'K83155603988957';
+const apiKey = import.meta.env.VITE_OCR_API_KEY;
+
+
+
 const apiUrl = 'https://api.ocr.space/parse/image';
+
+
 
 export async function extractPassportData(imageFile: File): Promise<PassportData> {
   try {
